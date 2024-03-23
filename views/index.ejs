@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Whatsup</title>
+    <link rel="="stylesheet" href="style.css">
 </head>
 <body>
     <h3>All Chats!</h3>
-    <% for(let chat of Chats) { %>
+    <% for(let chat of chats) { %>
     <div class="chat">
-            <P>Form : <%= chat.from %></P>
+            <P>Form : <i> <%= chat.from %></i></P>
         <div class="Msg">
             <P><%= chat.msg %> </P>
         </div>
-        <P>Recevied by:<%= chat.to %></P>
+        <P>Recevied by:<i> <%= chat.to %></i></P>
         <hr/>
+        <br><br>
     </div>
 <% } %>
 
