@@ -34,14 +34,14 @@ app.get("/chats/new", (req , res)=>{
 
 //Create Route
 app.post("/chats",(req, res)=>{
-    let { from, msg,to}=req.body;
+    let { from, to,msg}=req.body;
     let newChat = new Chat({
-        from:from,
+        from: from,
         to: to,
         msg: msg,
         created_at: new Date()
     });
-    console.log(newChat);
+    newChat.save().then((res))
     res.send("working");
 });
 

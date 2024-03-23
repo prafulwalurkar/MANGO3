@@ -14,26 +14,26 @@ async function main(){
 
 let allChats =[
     {
-    from : "neha",
-    to : "riya",
+    from : "Neha",
+    to : "Riya",
     msg : "send me your sheets",
     created_at : new Date(),
 },
 {
-    from : "ritu",
-    to : "riya",
+    from : "Ritu",
+    to : "Riya",
     msg : "teach me js callback",
     created_at : new Date()
 },
 {
-    from : "tony",
-    to : "stark",
+    from : "Tony",
+    to : "Stark",
     msg : "send me iron man",
     created_at : new Date()
 },
 {
-    from : "grrot",
-    to : "hulk",
+    from : "Grrot",
+    to : "Hulk",
     msg : "send me you gf",
     created_at : new Date()
 }
