@@ -16,15 +16,12 @@ async function main(){
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsup');
 }
 
-let chat1 = new Chat({
-    from : "neha",
-    to : "riya",
-    msg : "send me your sheets",
-    created_at : new Date()
-});
 
-chat1.save().then((res)=> {
-    console.log(res);
+//Index Route
+app.get("/Chats",async(req,res)=>{
+    let chats = await Chat.find();
+    console.log(chats);
+    res.render("index.ejs",{chats});
 });
 
 app.get("/",(req, res) =>{
