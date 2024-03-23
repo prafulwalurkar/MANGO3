@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose =require("mongoose");
 const path = require("path");
-const Chat = require(".models/Chat.js");
+const Chat = require("./models/Chat.js");
 
 app.set("views", path.join(__dirname,"views"));
 app.set("views engine","ejs");
@@ -16,7 +16,7 @@ async function main(){
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsup');
 }
 
-let chat1 = new chat({
+let chat1 = new Chat({
     from : "neha",
     to : "riya",
     msg : "send me your sheets",
