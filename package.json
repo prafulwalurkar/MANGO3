@@ -4,6 +4,7 @@
     "css": "^3.0.0",
     "ejs": "^3.1.9",
     "express": "^4.19.1",
+    "method-override": "^3.0.0",
     "mongoose": "^8.2.3",
     "node": "^21.7.1"
   }

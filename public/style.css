@@ -1,21 +1,18 @@
-.h3{
-    color: wheat;
-}
-
 body{
-    margin-left: 40px;
-    background: black;
+    margin-left: 10px;
+   
 }
 .chat{
-    background-color:aqua;
+    background-color:lightblue;
     padding: 10px 100px;
     border-radius: 20px;
-    display: inline;
+    display: inline-block;
     color: wheat;
 }
 .msg{
     background-color: dodgerblue;
-    color: white;
-    padding: 15px 15px;
+    padding: 10px ;
     border-radius: 20px;
+    color: white;
+    
 }
