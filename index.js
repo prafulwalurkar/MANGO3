@@ -7,6 +7,8 @@ const Chat = require("./models/Chat.js");
 app.set("views", path.join(__dirname,"views"));
 app.set("views engine","ejs");
 app.use(express.static(path.join(__dirname,"public")));
+app.use(express.urlencoded({extended:true}));
+
 
 main().then(()=>{
     console.log("connection successfull");
@@ -23,6 +25,24 @@ app.get("/chats",async(req,res)=>{
     let chats = await Chat.find();
     console.log(chats);
     res.render("index.ejs",{ chats });
+});
+
+//New Route
+app.get("/chats/new", (req , res)=>{
+    res.render("new.ejs");
+});
+
+//Create Route
+app.post("/chats",(req, res)=>{
+    let { from, msg,to}=req.body;
+    let newChat = new Chat({
+        from:from,
+        to: to,
+        msg: msg,
+        created_at: new Date()
+    });
+    console.log(newChat);
+    res.send("working");
 });
 
 app.get("/",(req, res) =>{
