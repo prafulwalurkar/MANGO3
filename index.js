@@ -3,13 +3,13 @@ const app = express();
 const mongoose =require("mongoose");
 const path = require("path");
 const Chat = require("./models/Chat.js");
-const methoedoverride =require("method-override");
+const methoedOverride =require("method-override");
 
 app.set("views", path.join(__dirname,"views"));
 app.set("views engine","ejs");
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
-app.use(methoedoverride("_method"));
+app.use(methoedOverride("_method"));
 
 
 main().then(()=>{
@@ -61,7 +61,7 @@ app.get("/chats/:id/edit",async (req,res)=>{
 
 //update route
 app.put("/chats/:id",async (req,res)=>{
-    let {id}= req.params;
+    let { id } = req.params;
     let { msg: newMsg}=req.body;
     console.log(newMsg);
     let updatedChat=await Chat.findByIdAndUpdate( 
@@ -72,6 +72,15 @@ app.put("/chats/:id",async (req,res)=>{
 console.log(updatedChat);
 res.redirect("/chats");
 });
+
+//Destroy Route
+app.delete("/chats/:id",async (res,req)=>{
+    let { id } = req.params;
+    let deletedChat = await Chat.findByIdAndDelete(id);
+    console.log(deletedChat);
+    res.redirect("/chats");
+
+})
 
 app.get("/",(req, res) =>{
     res.send("root is working");
