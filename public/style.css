@@ -1,18 +1,31 @@
+
 body{
     margin-left: 10px;
+    background: black;
    
+   
+}
+div{
+    margin: 10px;
+    
+}
+h3{
+    color: rgb(121, 227, 14);
+   
+    text-align: center;
 }
 .chat{
     background-color:lightblue;
     padding: 10px 100px;
     border-radius: 20px;
     display: inline-block;
-    color: wheat;
+    color: rgb(19, 14, 5);
 }
 .msg{
     background-color: dodgerblue;
-    padding: 10px ;
+    padding: 20px ;
     border-radius: 20px;
-    color: white;
+    color: rgb(243, 234, 234);
+
     
 }
